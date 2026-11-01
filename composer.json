@@ -1,0 +1,24 @@
+{
+    "name": "gosavetool/subtitles",
+    "description": "Parse, convert, shift and repair SRT and WebVTT subtitles. No dependencies.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["srt", "vtt", "webvtt", "subtitles", "captions", "convert", "srt-to-vtt", "parser"],
+    "homepage": "https://www.gosavetool.com/vtt-subtitle-generator",
+    "authors": [
+        { "name": "GoSaveTool", "homepage": "https://www.gosavetool.com/" }
+    ],
+    "support": {
+        "issues": "https://github.com/mitolocya/gosavetool/issues",
+        "source": "https://github.com/mitolocya/gosavetool"
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": { "GoSaveTool\\Subtitles\\": "php/subtitles/src/" }
+    },
+    "scripts": {
+        "test": "php php/subtitles/tests/run.php"
+    }
+}

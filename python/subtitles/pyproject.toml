@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gosavetool-subtitles"
+version = "1.0.0"
+description = "Parse, convert, shift and repair SRT and WebVTT subtitles. No dependencies, with a CLI."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.8"
+authors = [{ name = "GoSaveTool" }]
+keywords = ["srt", "vtt", "webvtt", "subtitles", "captions", "whisper", "convert", "srt-to-vtt"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Text Processing",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://www.gosavetool.com/vtt-subtitle-generator"
+"Online tools" = "https://www.gosavetool.com/"
+Source = "https://github.com/mitolocya/gosavetool/tree/main/python/subtitles"
+Issues = "https://github.com/mitolocya/gosavetool/issues"
+
+[project.scripts]
+gosavetool-subtitles = "gosavetool_subtitles.__main__:main"
+
+[tool.setuptools.package-data]
+gosavetool_subtitles = ["py.typed"]

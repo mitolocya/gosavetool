@@ -1,0 +1,9 @@
+node_modules/
+*.tgz
+*.vsix
+dist/
+build/
+*.egg-info/
+__pycache__/
+vendor/
+composer.lock

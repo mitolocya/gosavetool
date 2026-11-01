@@ -1,0 +1,18 @@
+{
+  "name": "@gosavetool/subtitles",
+  "version": "1.0.0",
+  "description": "Parse, convert, shift and repair SRT and WebVTT subtitles. Zero dependencies, with a CLI.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bin": { "subtitles": "cli.js" },
+  "files": ["index.js", "index.d.ts", "cli.js", "LICENSE", "README.md"],
+  "scripts": { "test": "node test/run.js" },
+  "keywords": ["srt", "vtt", "webvtt", "subtitles", "captions", "convert", "srt-to-vtt", "vtt-to-srt", "subtitle-shift", "parser"],
+  "homepage": "https://www.gosavetool.com/vtt-subtitle-generator",
+  "repository": { "type": "git", "url": "git+https://github.com/mitolocya/gosavetool.git", "directory": "npm/subtitles" },
+  "bugs": { "url": "https://github.com/mitolocya/gosavetool/issues" },
+  "author": "GoSaveTool (https://www.gosavetool.com/)",
+  "license": "MIT",
+  "engines": { "node": ">=14" },
+  "publishConfig": { "access": "public" }
+}

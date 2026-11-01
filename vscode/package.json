@@ -1,0 +1,80 @@
+{
+  "name": "gosavetool",
+  "displayName": "GoSaveTool: Subtitles, Images & Text",
+  "description": "Convert SRT to VTT, shift and repair subtitles, compress images and convert them to WebP, count words and change text case. Works offline, nothing is uploaded.",
+  "version": "1.0.1",
+  "publisher": "gosavetool",
+  "author": { "name": "GoSaveTool", "url": "https://www.gosavetool.com/" },
+  "license": "MIT",
+  "homepage": "https://www.gosavetool.com/",
+  "repository": { "type": "git", "url": "https://github.com/mitolocya/gosavetool", "directory": "vscode" },
+  "bugs": { "url": "https://www.gosavetool.com/contact" },
+  "icon": "media/icon.png",
+  "galleryBanner": { "color": "#1f1b4d", "theme": "dark" },
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Formatters", "Other"],
+  "keywords": ["srt", "vtt", "webvtt", "subtitles", "captions", "webp", "image compressor", "word count", "case converter", "slug"],
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "commands": [
+      { "command": "gosavetool.srtToVtt", "title": "Convert SRT to WebVTT", "category": "GoSaveTool" },
+      { "command": "gosavetool.vttToSrt", "title": "Convert WebVTT to SRT", "category": "GoSaveTool" },
+      { "command": "gosavetool.shiftSubtitles", "title": "Shift Subtitle Timing", "category": "GoSaveTool" },
+      { "command": "gosavetool.repairSubtitles", "title": "Repair and Renumber Subtitles", "category": "GoSaveTool" },
+      { "command": "gosavetool.imageTools", "title": "Compress / Resize Image", "category": "GoSaveTool" },
+      { "command": "gosavetool.convertToWebp", "title": "Convert Image to WebP", "category": "GoSaveTool" },
+      { "command": "gosavetool.textStats", "title": "Word and Character Count", "category": "GoSaveTool" },
+      { "command": "gosavetool.changeCase", "title": "Change Case…", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.upper", "title": "UPPER CASE", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.lower", "title": "lower case", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.title", "title": "Title Case", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.sentence", "title": "Sentence case", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.camel", "title": "camelCase", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.snake", "title": "snake_case", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.kebab", "title": "kebab-case", "category": "GoSaveTool" },
+      { "command": "gosavetool.case.slug", "title": "Make URL Slug", "category": "GoSaveTool" },
+      { "command": "gosavetool.cleanWhitespace", "title": "Clean Extra Spaces and Blank Lines", "category": "GoSaveTool" },
+      { "command": "gosavetool.moreTools", "title": "More Free Tools in the Browser", "category": "GoSaveTool" },
+      { "command": "gosavetool.openWebsite", "title": "Open gosavetool.com", "category": "GoSaveTool" }
+    ],
+    "submenus": [
+      { "id": "gosavetool.editor", "label": "GoSaveTool" }
+    ],
+    "menus": {
+      "editor/context": [
+        { "submenu": "gosavetool.editor", "group": "1_modification@90" }
+      ],
+      "gosavetool.editor": [
+        { "command": "gosavetool.srtToVtt", "when": "resourceExtname == .srt", "group": "1_sub@1" },
+        { "command": "gosavetool.vttToSrt", "when": "resourceExtname == .vtt", "group": "1_sub@1" },
+        { "command": "gosavetool.shiftSubtitles", "when": "resourceExtname =~ /^\\.(srt|vtt)$/", "group": "1_sub@2" },
+        { "command": "gosavetool.repairSubtitles", "when": "resourceExtname =~ /^\\.(srt|vtt)$/", "group": "1_sub@3" },
+        { "command": "gosavetool.changeCase", "group": "2_text@1" },
+        { "command": "gosavetool.cleanWhitespace", "group": "2_text@2" },
+        { "command": "gosavetool.textStats", "group": "2_text@3" },
+        { "command": "gosavetool.moreTools", "group": "9_more@1" }
+      ],
+      "explorer/context": [
+        { "command": "gosavetool.imageTools", "when": "resourceExtname =~ /^\\.(png|jpe?g|webp|gif|bmp)$/i", "group": "7_modification@1" },
+        { "command": "gosavetool.convertToWebp", "when": "resourceExtname =~ /^\\.(png|jpe?g|gif|bmp)$/i", "group": "7_modification@2" },
+        { "command": "gosavetool.srtToVtt", "when": "resourceExtname == .srt", "group": "7_modification@3" },
+        { "command": "gosavetool.vttToSrt", "when": "resourceExtname == .vtt", "group": "7_modification@3" }
+      ],
+      "commandPalette": [
+        { "command": "gosavetool.srtToVtt", "when": "editorIsOpen" },
+        { "command": "gosavetool.vttToSrt", "when": "editorIsOpen" }
+      ]
+    },
+    "configuration": {
+      "title": "GoSaveTool",
+      "properties": {
+        "gosavetool.statusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the word and character count of the selection or document in the status bar."
+        }
+      }
+    }
+  }
+}

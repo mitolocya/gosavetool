@@ -1,0 +1,8 @@
+# composer installs only the PHP library
+/vscode export-ignore
+/npm export-ignore
+/python export-ignore
+/.gitignore export-ignore
+/.gitattributes export-ignore
+* text=auto eol=lf
+*.png binary
