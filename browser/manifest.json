@@ -3,7 +3,7 @@
   "name": "GoSaveTool: Save Image as PNG, JPG, WebP",
   "short_name": "GoSaveTool",
   "version": "1.0.0",
-  "description": "Right-click any image to save it as PNG, JPG or WebP, or compress and resize it. Count words and characters of selected text. Nothing is uploaded.",
+  "description": "Right-click any image to save it as PNG, JPG or WebP, or compress it. Count words and characters of selected text. Nothing uploaded.",
   "homepage_url": "https://www.gosavetool.com/",
   "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
   "action": {
