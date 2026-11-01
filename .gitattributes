@@ -6,3 +6,4 @@
 /.gitattributes export-ignore
 * text=auto eol=lf
 *.png binary
+/browser export-ignore

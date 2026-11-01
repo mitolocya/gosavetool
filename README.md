@@ -6,6 +6,7 @@ This repository holds the libraries and the editor extension built from the same
 
 | Folder | Package | What it does |
 | --- | --- | --- |
+| [`browser`](browser) | Chrome and Firefox extension | Save image as PNG, JPG or WebP, compress and resize, word and character counter |
 | [`vscode`](vscode) | [VS Code extension](https://marketplace.visualstudio.com/items?itemName=gosavetool.gosavetool) | SRT ↔ WebVTT, subtitle shift and repair, image compress and WebP, word count, case changes |
 | [`npm/subtitles`](npm/subtitles) | [`@gosavetool/subtitles`](https://www.npmjs.com/package/@gosavetool/subtitles) | Parse, convert, shift and repair SRT and WebVTT in JavaScript, with a CLI |
 | [`npm/text`](npm/text) | [`@gosavetool/text`](https://www.npmjs.com/package/@gosavetool/text) | Word count, reading time, social media limits, Title Case, slugs |

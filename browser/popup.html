@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GoSaveTool text tools</title>
+<link rel="stylesheet" href="lib/ui.css">
+<style>
+body{width:400px;padding:14px}
+body.window{width:auto}
+textarea{width:100%;min-height:130px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--soft);color:var(--fg);font:inherit}
+textarea:focus{outline:2px solid var(--brand);outline-offset:-1px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0}
+.stats div{background:var(--soft);border-radius:8px;padding:6px 4px;text-align:center}
+.stats b{display:block;font-size:17px}
+.stats span{font-size:11px;color:var(--muted)}
+.limits{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:4px;font-size:12.5px}
+.limits li{display:grid;grid-template-columns:150px 1fr 54px;align-items:center;gap:8px}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--good)}
+.bar i.over{background:var(--bad)}
+.limits em{font-style:normal;text-align:right}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tools button{padding:4px 8px;font-size:12.5px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+footer{border-top:1px solid var(--line);padding-top:8px;font-size:12px;display:flex;flex-wrap:wrap;gap:4px 10px}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand"><img src="icons/32.png" alt="">GoSaveTool</span>
+  <button id="copy" class="primary">Copy</button>
+</header>
+<textarea id="t" placeholder="Paste or type text. Tip: select text on any page, right-click and choose “Count words and characters”." spellcheck="false"></textarea>
+<div class="stats">
+  <div><b id="words">0</b><span>words</span></div>
+  <div><b id="chars">0</b><span>characters</span></div>
+  <div><b id="sents">0</b><span>sentences</span></div>
+  <div><b id="read">0s</b><span>reading</span></div>
+</div>
+<ul class="limits" id="limits"></ul>
+<div class="tools" id="tools">
+  <button data-fn="upper">UPPER</button>
+  <button data-fn="lower">lower</button>
+  <button data-fn="title">Title Case</button>
+  <button data-fn="sentence">Sentence case</button>
+  <button data-fn="slug">slug</button>
+  <button data-fn="camel">camelCase</button>
+  <button data-fn="snake">snake_case</button>
+  <button data-fn="clean">Clean spaces</button>
+</div>
+<footer>
+  <span class="muted">More free tools:</span>
+  <a data-page="character-counter" href="#">Character Counter</a>
+  <a data-page="cool-text-generator" href="#">Cool Text</a>
+  <a data-page="image-compressor" href="#">Image Compressor</a>
+  <a data-page="webp-converter" href="#">WebP Converter</a>
+  <a data-page="" href="#">All tools</a>
+</footer>
+<script src="lib/text.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

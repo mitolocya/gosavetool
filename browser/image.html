@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compress or resize image · GoSaveTool</title>
+<link rel="icon" href="icons/32.png">
+<link rel="stylesheet" href="lib/ui.css">
+<style>
+body{padding:24px 16px}
+main{max-width:1000px;margin:0 auto}
+h1{font-size:22px;margin:18px 0 4px}
+.sub{margin:0 0 18px}
+.row{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:end;margin-bottom:14px}
+label{display:grid;gap:4px;font-size:13px;color:var(--muted)}
+select,input[type=number]{font:inherit;background:var(--soft);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;min-width:120px}
+.stats{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 14px}.stats b{font-size:17px}
+.view{border:1px solid var(--line);border-radius:12px;background:repeating-conic-gradient(#8882 0 25%,transparent 0 50%) 0 0/16px 16px;display:grid;place-items:center;min-height:240px;max-height:65vh;overflow:auto}
+.view img{max-width:100%;max-height:65vh}
+.err{background:var(--soft);border:1px solid var(--bad);border-radius:10px;padding:12px 14px}
+footer{margin-top:22px;font-size:13px;display:flex;flex-wrap:wrap;gap:4px 12px}
+</style>
+</head>
+<body>
+<main>
+  <span class="brand"><img src="icons/32.png" alt="">GoSaveTool</span>
+  <h1 id="name">Image</h1>
+  <p class="sub muted">Compress, convert and resize in your browser. Nothing is uploaded.</p>
+  <div id="error" class="err" hidden></div>
+  <div id="tool">
+    <div class="row">
+      <label>Format<select id="fmt"><option value="image/webp">WebP</option><option value="image/jpeg">JPG</option><option value="image/png">PNG</option></select></label>
+      <label>Quality <span id="qv"></span><input id="q" type="range" min="10" max="100" value="80"></label>
+      <label>Max width (px)<input id="w" type="number" min="16" placeholder="original"></label>
+      <button id="save" class="primary" disabled>Download</button>
+    </div>
+    <div class="stats"><span>Original <b id="os">…</b></span><span>New <b id="ns">…</b></span><span id="diff"></span><span id="dim" class="muted"></span></div>
+    <div class="view"><img id="out" alt="Preview"></div>
+  </div>
+  <footer>
+    <span class="muted">More in the browser:</span>
+    <a data-page="image-compressor" href="#">Image Compressor</a>
+    <a data-page="resize-image-for-social-media" href="#">Resize for social media</a>
+    <a data-page="image-cropper" href="#">Image Cropper</a>
+    <a data-page="remove-background-from-image" href="#">Remove Background</a>
+    <a data-page="" href="#">All tools</a>
+  </footer>
+</main>
+<script src="image.js"></script>
+</body>
+</html>
