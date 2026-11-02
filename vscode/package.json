@@ -2,7 +2,7 @@
   "name": "gosavetool",
   "displayName": "GoSaveTool: Subtitles, Images & Text",
   "description": "Convert SRT to VTT, shift and repair subtitles, compress images and convert them to WebP, count words and change text case. Works offline, nothing is uploaded.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "gosavetool",
   "author": { "name": "GoSaveTool", "url": "https://www.gosavetool.com/" },
   "license": "MIT",
